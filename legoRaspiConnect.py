@@ -6,6 +6,7 @@
 # this program is based on lots of sources
 # look at raspberry-spy.co.uk for bluetooth wii control
 # wifi car from brickpi python
+# oct 10th corrected turn logic for large errors to move shortest distance
 
 from BrickPi import *   #import BrickPi.py file to use BrickPi operations
 
@@ -147,8 +148,13 @@ class myThread (threading.Thread):		#This thread is used for keeping the motor r
             if  not calibrating :
                 if autoTurn:
                     error = demandedHeading - sensorHeading
-                    
-                    if error > 5:
+                    # limit so that move in shorted direction
+                    if abs(error) > 180:
+                        if error < 0:
+                            turnRight()
+                        else:
+                            turnLeft()
+                    elif error > 5:
                         turnRight()
                     elif error < -5:
                         turnLeft()
