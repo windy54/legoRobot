@@ -3,19 +3,21 @@
 *  t.s.jaikrishna<at>gmail.com
 *  Initial date:  	June 21, 2013
 *  Updated : 		May 30, 2014
-*  Modified by Steve Gale Sept 2012 to connect to hitechnic magnetic compass
-* also based on Xander Soldaat's driver for this device
-*  Based on Matthew Richardson's example on testing BrickPi drivers and Xander Soldaat's Example on NXT for RobotC
+*  Modified by Steve Gale Sept 2012 to connect to hitechnic NXT magnetic compass sesnor
+*  also based on Xander Soldaat's driver for this device
+*  Based on Matthew Richardson's example on testing BrickPi drivers and Xander Soldaat's 
+*  Example on NXT for RobotC
 *  You may use this code as you wish, provided you give credit where it's due.
 *  
-*  This is a program for testing the RPi BrickPi drivers and I2C communication on the BrickPi with a dCompass on HMC5883L 
+*  This is a program for testing the RPi BrickPi drivers and I2C communication on 
+*  the BrickPi  
 *
 # These files have been made available online through a Creative Commons Attribution-ShareAlike 3.0  license.
 # (http://creativecommons.org/licenses/by-sa/3.0/)
 #
 # http://www.dexterindustries.com/
 # This code is for testing the BrickPi with the Magnnetic Compass from Hitechnic 
-# Product webpage: http://www.
+# Product webpage: http://www.hitechnic.com
 */
 
 #include <stdio.h>
