@@ -1,0 +1,1 @@
+gcc -o htc "HTCompass.c" -lrt -lm -L/usr/local/lib -lwiringPi
