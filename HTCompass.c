@@ -3,7 +3,7 @@
 *  t.s.jaikrishna<at>gmail.com
 *  Initial date:  	June 21, 2013
 *  Updated : 		May 30, 2014
-*  Modified by Steve Gale Sept 2012 to connect to hitechnic NXT magnetic compass sesnor
+*  Modified by Steve Gale Sept 2012 to connect to hitechnic NXT magnetic compass sensor
 *  also based on Xander Soldaat's driver for this device
 *  Based on Matthew Richardson's example on testing BrickPi drivers and Xander Soldaat's 
 *  Example on NXT for RobotC
@@ -45,7 +45,7 @@ int result;
 float angle;
 
 #define PI 3.14159265359
-#define I2C_PORT  PORT_2                             // I2C port for the dCompass
+#define I2C_PORT  PORT_2                             // I2C port for the dCompass CHANGE TO SUIT
 #define I2C_SPEED 0                                  // delay for as little time as possible. Usually about 100k baud
 
 #define I2C_DEVICE_DCOM 0                        // DComm is device 0 on this I2C bus
@@ -74,7 +74,7 @@ int initialiseCompass(){
 }
 
 int getHeading(){
-  /* reads hading from compass */
+  /* reads heading from compass */
   int heading;
   char byte1,byte2;
   
@@ -204,6 +204,16 @@ int main() {
   printf("Sensor %s\n",getSensor());
 
   usleep(500000);
+  /* ***********************************************************************************
+  *
+  * I calibrated sensor by placing on a turntable and manually rotating one and a
+  * half turns in 20 seconds to prove the software
+  * I intended to use my robot to calibrate ny powering the motors.
+  * Currently (oct 2014) I cant calibrate the sensor in Python. I think is due to
+  * how I am using a class to call BrickPI.updatevalues()
+  * The software below puts the compass into calibrate mode, performs no further actions
+  * for 20 seconds until it selects measurement mode and reads the result.
+  ***************************************************************************************/
   printf("start calibration result = %d\n",startCalibration());
   printf(" Calibration started\n");
   //usleep(20000000);

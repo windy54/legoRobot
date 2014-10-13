@@ -3,9 +3,9 @@
 #|W|i|n|d|y| |S|o|f|t|w|a|r|e| | | | | | | |
 #+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 #
-# this program is based on lots of sources
-# look at raspberry-spy.co.uk for bluetooth wii control
+# this program is based on lots of sources, apologies for not including all references
 # wifi car from brickpi python
+#
 # oct 10th corrected turn logic for large errors to move shortest distance
 
 from BrickPi import *   #import BrickPi.py file to use BrickPi operations
@@ -82,6 +82,9 @@ def turn(angle):
     if demandedHeading > 359:
           demandedHeading = demandedHeading - 360
     autoTurn = True
+
+# currently not working, need to stop all sesnor reads in calibrate mode
+# and read status on completion
     
 def calibrate():
     global calibrating

@@ -6,7 +6,9 @@
 # Local Execute Objects for RasPiConnect  
 # to add Execute objects, modify this file 
 # 
-#
+# Modified by Steve Gale to control robot using dexter industries BrickPi
+# robot includes ultrasonic sesnor, compass and PI camera
+# update rate for camera is slow
 #
 
 # system imports
